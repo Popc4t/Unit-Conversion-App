@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace UnitConversionApp
 {
@@ -12,62 +8,77 @@ namespace UnitConversionApp
         {
             
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Type M to convert from Metric to Imperial, type I to convert Imperial units to Metric.");
+            Console.WriteLine("Input M to convert from Metric to Imperial, input I to convert Imperial units to Metric.");
             
             char input = Convert.ToChar(Console.ReadLine());
 
-            if (input == 'M' | input == 'm')
+            switch (input)
             {
-                IfMetric.entry();
-            } 
-            if (input == 'I' | input == 'i')
-            {
-                ifImperial.entry2();
-
+                case 'm':
+                    Metric.Entry();
+                    break;
+                case 'i':
+                    Imperial.Entry2();
+                    break;
             }
+            
         }
 
     }
-    public static class IfMetric
+    public static class Metric
     {
-        public static void entry()
+        public static void Entry()
         {
             Console.WriteLine("Input 'T' to convert temperature units.");
             Console.WriteLine("Input 'L' to convert length units.");
             Console.WriteLine("Input 'M' to convert mass units.");
             char input = Convert.ToChar(Console.ReadLine());
 
-            if (input == 'T' | input == 't')
+            switch (input)
             {
-                temperature();
+                case 't':
+                    temperature();
+                    break;
+                case 'l':
+                    length();
+                    break;
+                case 'm':
+                    mass();
+                    break;
             }
-
+            
         }
         
-        public static void temperature() //Converting Celsius to Fahrenheit//
+        public static void temperature() //Converting Celsius to Fahrenheit
         {
             Console.Write("Input a temperature in Celsius: ");
-            double input = Convert.ToDouble(Console.ReadLine());
-            double fahrenheit = input * 9 / 5 + 32;
-            Console.WriteLine(input + "°C converted to Fahrenheit = " + fahrenheit + "°F");
+            double celsiusinput = Convert.ToDouble(Console.ReadLine());
+            double fahrenheit = celsiusinput * 9 / 5 + 32;
+            Console.WriteLine(celsiusinput + "°C converted to Fahrenheit = " + fahrenheit + "°F");
             Console.ReadLine();
-
-
         }
-        public static void length() //Converting Metric length units (meter, centimeter, kilometer etc.) to Imperial length units.//
+        public static void length() //Converting Metric length units (meter, centimeter, kilometer etc.) to Imperial length units.
         {
-
-
+            Console.Write("Input a length number in meters: ");
+            double meterinput = Convert.ToDouble(Console.ReadLine());
+            double feet = meterinput * 3.2808;
+            Console.WriteLine(meterinput + " meter converted to feet = " + feet + " feet");
+            Console.ReadLine();
+        }
+        public static void mass() //Converting metric mass units to imperial units.
+        {
+            Console.Write("Input a mass in kilograms: ");
+            double kiloinput = Convert.ToDouble(Console.ReadLine());
+            double pounds = kiloinput * 2.20462;
+            Console.WriteLine(kiloinput + " kilograms converted to pounds = " + pounds + " lbs");
+            Console.ReadLine();
         }
 
     }
 
-
-
-
-    public static class ifImperial
+    public static class Imperial
     {
-        public static void entry2()
+        public static void Entry2()
         {
 
 
