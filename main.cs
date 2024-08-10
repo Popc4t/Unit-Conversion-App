@@ -59,19 +59,17 @@ namespace UnitConversionApp
         }
         public static void length() //Converting Metric length units (meter, centimeter, kilometer etc.) to Imperial length units.
         {
-            Console.Write("Input a length number in meters: ");
-            double meterinput = Convert.ToDouble(Console.ReadLine());
-            double feet = meterinput * 3.2808;
-            Console.WriteLine(meterinput + " meter converted to feet = " + feet + " feet");
-            Console.ReadLine();
+            double input = Convert.ToDouble(Console.ReadLine());
+            double inch, mile, yard, feet;
+            inch = input * 0.3937;
+            mile = input * 0.621371;
+
+
+
         }
         public static void mass() //Converting metric mass units to imperial units.
         {
-            Console.Write("Input a mass in kilograms: ");
-            double kiloinput = Convert.ToDouble(Console.ReadLine());
-            double pounds = kiloinput * 2.20462;
-            Console.WriteLine(kiloinput + " kilograms converted to pounds = " + pounds + " lbs");
-            Console.ReadLine();
+            
         }
 
     }
@@ -80,8 +78,43 @@ namespace UnitConversionApp
     {
         public static void Entry2()
         {
+            Console.WriteLine("Input 'T' to convert temperature units.");
+            Console.WriteLine("Input 'L' to convert length units.");
+            Console.WriteLine("Input 'M' to convert mass units.");
+            char input = Convert.ToChar(Console.ReadLine());
+
+            switch (input)
+            {
+                case 't':
+                    temperature();
+                    break;
+                case 'l':
+                    length();
+                    break;
+                case 'm':
+                    mass();
+                    break;
+            }
+
+        }
+
+        public static void temperature() //Converting Fahrenheit to Celsius
+        {
+            Console.Write("Input a temperature in Fahrenheit: ");
+            double fahrenheitinput = Convert.ToDouble(Console.ReadLine());
+            double celsius = (fahrenheitinput - 32) * 5 / 9;
+            Console.WriteLine(fahrenheitinput + "°C converted to Fahrenheit = " + celsius + "°C");
+            Console.ReadLine();
+        }
+        public static void length() //Converting imperial length units (feet, miles, inches etc.) to Imperial length units.
+        {
+            
 
 
+        }
+        public static void mass() //Converting imperial mass units to metric units.
+        {
+            
         }
 
     }
