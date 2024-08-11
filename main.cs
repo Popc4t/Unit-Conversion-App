@@ -59,12 +59,44 @@ namespace UnitConversionApp
         }
         public static void length() //Converting Metric length units (meter, centimeter, kilometer etc.) to Imperial length units.
         {
-            double input = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Input 'I' to convert from cm to inches, 'K' to convert kilometers to miles, 'Y' to convert meters to yards, 'F' to convert meters to feet.");
+            char input = Convert.ToChar(Console.ReadLine());
+            
             double inch, mile, yard, feet;
-            inch = input * 0.3937;
-            mile = input * 0.621371;
+            
+            switch (input)
+            {
+                case 'i':
+                    Console.WriteLine("Input a value in centimeters: ");
+                    double cminput = Convert.ToDouble(Console.ReadLine());
+                    inch = cminput * 0.3937;
+                    Console.WriteLine(inch);
+                    Console.ReadLine();
+                    break;
 
+                case 'k':
+                    Console.WriteLine("Input a value in kilometers: ");
+                    double kminput = Convert.ToDouble(Console.ReadLine());
+                    mile = kminput * 0.621371;
+                    Console.WriteLine(mile);
+                    Console.ReadLine();
+                    break;
 
+                case 'y':
+                    Console.WriteLine("Input a value in meters: ");
+                    double meterinput = Convert.ToDouble(Console.ReadLine());
+                    yard = meterinput * 1.0936133;
+                    Console.WriteLine(yard);
+                    Console.ReadLine();
+                    break;
+                case 'f':
+                    Console.WriteLine("Input a value in meters: ");
+                    double metreinput = Convert.ToDouble(Console.ReadLine());
+                    feet = metreinput * 3.2808;
+                    Console.WriteLine(feet);
+                    Console.ReadLine();
+                    break;
+            }
 
         }
         public static void mass() //Converting metric mass units to imperial units.
