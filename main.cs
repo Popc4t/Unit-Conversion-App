@@ -1,10 +1,13 @@
 ﻿using System;
+using System.Reflection;
+using System.Runtime.Remoting.Messaging;
+using System.Threading;
 
 namespace UnitConversionApp
 {
-    public static class main
+    public static class Mainmenu
     {
-        static void Main(string[] args)
+        public static void Main()
         {
             
             Console.ForegroundColor = ConsoleColor.Green;
@@ -25,6 +28,30 @@ namespace UnitConversionApp
         }
 
     }
+    public static class Controls
+    {
+        public static void KeyControls()
+        {
+            Console.WriteLine("\nPress '1' key to return to the main menu, '2' to convert again");
+
+            char keyinput = Convert.ToChar(Console.ReadLine());
+
+            switch (keyinput)
+            {
+                case '1':
+                    Mainmenu.Main();
+                    break;
+                case '2':
+
+                    break;
+            }
+
+
+        }
+
+
+    }
+
     public static class Metric
     {
         public static void Entry()
@@ -37,29 +64,49 @@ namespace UnitConversionApp
             switch (input)
             {
                 case 't':
-                    temperature();
+                    Temperature();
                     break;
                 case 'l':
-                    length();
+                    Length();
                     break;
                 case 'm':
-                    mass();
+                    Mass();
                     break;
             }
             
         }
         
-        public static void temperature() //Converting Celsius to Fahrenheit
+        public static void Temperature() //Converting Celsius to Fahrenheit
         {
             Console.Write("Input a temperature in Celsius: ");
             double celsiusinput = Convert.ToDouble(Console.ReadLine());
             double fahrenheit = celsiusinput * 9 / 5 + 32;
+            
             Console.WriteLine(celsiusinput + "°C converted to Fahrenheit = " + fahrenheit + "°F");
-            Console.ReadLine();
+            
+            Thread.Sleep(1500);
+            
+            Console.WriteLine("\nPress '1' key to return to the main menu, '2' to convert again");
+            
+            char keyinput = Convert.ToChar(Console.ReadLine());
+
+            switch (keyinput)
+            {
+                case '1':
+                    Mainmenu.Main();
+                    break;
+                case '2':
+                    Temperature();
+                    break;
+            }
+
         }
-        public static void length() //Converting Metric length units (meter, centimeter, kilometer etc.) to Imperial length units.
+        public static void Length() //Converting Metric length units (meter, centimeter, kilometer etc.) to Imperial length units.
         {
-            Console.WriteLine("Input 'I' to convert from cm to inches, 'K' to convert kilometers to miles, 'Y' to convert meters to yards, 'F' to convert meters to feet.");
+            Console.WriteLine("Input 'I' to convert centimeters to inches.");
+            Console.WriteLine("Input 'K' to convert kilometers to miles.");
+            Console.WriteLine("Input 'F' to convert meters to feet.");
+            Console.WriteLine("Input 'Y' to convert meters to yards.");
             char input = Convert.ToChar(Console.ReadLine());
             
             double inch, mile, yard, feet;
@@ -71,7 +118,7 @@ namespace UnitConversionApp
                     double cminput = Convert.ToDouble(Console.ReadLine());
                     inch = cminput * 0.3937;
                     Console.WriteLine(inch);
-                    Console.ReadLine();
+                    Controls.KeyControls();
                     break;
 
                 case 'k':
@@ -98,10 +145,31 @@ namespace UnitConversionApp
                     break;
             }
 
+
         }
-        public static void mass() //Converting metric mass units to imperial units.
+        public static void Mass() //Converting metric mass units to imperial units.
         {
-            
+            Console.WriteLine("Input 'K' to convert kilograms to pounds, 'O' to convert grams to ounces.");
+            char charinput = Convert.ToChar(Console.ReadLine());
+
+            double pounds, ounces;
+
+            switch (charinput)
+            {
+                case 'k':
+                    double kginput = Convert.ToDouble(Console.ReadLine());
+                    pounds = kginput * 2.20462;
+                    Console.WriteLine(kginput + "kg converted to pounds = " + pounds + " lbs");
+                    Console.ReadLine();
+                    break;
+                case 'o':
+                    double graminput = Convert.ToDouble(Console.ReadLine());
+                    ounces = graminput * 0.03527396;
+                    Console.WriteLine(graminput + "grams converted to ounces = " + ounces + "oz");
+                    break;
+            }
+                
+
         }
 
     }
