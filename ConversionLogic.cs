@@ -8,15 +8,20 @@ namespace UnitConversionApp
 {
     public class Metric // Converting metric units to imperial.
     {
-        public static void ToFahrenehit()
+        public static void ToFahrenheit()
         {
-            double input = Convert.ToDouble(Console.ReadLine());
-            double fahrenheit = input * 5 / 9 + 32;
-            Console.WriteLine(input + "°C converted to Fahrenheit = " + fahrenheit + "°F");
-            
-
-
-
+            double celsiusinput = Convert.ToDouble(Console.ReadLine());
+            double fahrenheit = celsiusinput * 5 / 9 + 32;
+        }
+        public static void ToPounds()
+        {
+            double kiloinput = Convert.ToDouble(Console.ReadLine());
+            double pounds = kiloinput * 2.204623;
+        }
+        public static void ToFeet()
+        {
+            double meterinput = Convert.ToDouble(Console.ReadLine());
+            double feet = meterinput * 3.28084;
         }
 
 

@@ -7,12 +7,25 @@ using System.Threading;
 
 namespace UnitConversionApp
 {
-    public static class Mainmenu
+    public static class Main
     {
-        public static void Main()
+        public static void MainMenu()
         {
+            Console.WriteLine("Input 'M' to convert metric units to imperial.");
+            Console.WriteLine("Input 'I' to convert imperial units to metric.");
+            ConsoleKeyInfo keyinfo = Console.ReadKey();
+            switch (keyinfo.Key)
+            {
+                case ConsoleKey.M:
+                    
+                    break;
+                case ConsoleKey.I:
+                    
+                    break;
+            }   
 
         }
+        
     }
     
 }
