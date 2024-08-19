@@ -1,2 +1,2 @@
 I'm a beginner in C#, and this is my first
-small project, so excuse the bad code haha.
+small project, so excuse me if the code is bad haha.
