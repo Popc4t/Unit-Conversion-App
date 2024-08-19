@@ -1,17 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace UnitConversionApp
 {
-    public class Metric // Converting metric units to imperial.
+    public static class Metric // Converting metric units to imperial.
     {
+        
         public static void ToFahrenheit()
         {
+            Console.WriteLine("\nInput a value in Celsius to convert to Fahrenheit: ");
             double celsiusinput = Convert.ToDouble(Console.ReadLine());
-            double fahrenheit = celsiusinput * 5 / 9 + 32;
+            double fahrenheit = celsiusinput * 9 / 5 + 32;
+            Console.WriteLine(celsiusinput + "°C converted to Fahrenheit = " + fahrenheit + "°F");
+            Console.ReadLine();
+            
         }
         public static void ToPounds()
         {
