@@ -43,8 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConversionFunctions.cs" />
-    <Compile Include="main.cs" />
+    <Compile Include="src\ConversionLogic.cs" />
+    <Compile Include="src\mainprogram.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
