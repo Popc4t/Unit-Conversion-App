@@ -21,6 +21,10 @@ namespace UnitConversionApp
                 case ConsoleKey.I:
                     ImperialControls();
                     break;
+                default:
+                    Console.WriteLine("\nInvalid input, please try again.");
+                    Main();
+                    break;
             }   
 
         }
@@ -64,6 +68,10 @@ namespace UnitConversionApp
                 case ConsoleKey.M:
                     Metric.ToFeet();
                     break;
+                default:
+                    Console.WriteLine("\nInvalid input, please try again.");
+                    MetricControls();
+                    break;
             }
 
         }
@@ -85,6 +93,10 @@ namespace UnitConversionApp
                     break;
                 case ConsoleKey.M:
                     Imperial.ToMeters();
+                    break;
+                default:
+                    Console.WriteLine("\nInvalid input, please try again.");
+                    ImperialControls();
                     break;
             }
 
