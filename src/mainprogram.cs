@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace UnitConversionApp
 {
@@ -30,6 +31,7 @@ namespace UnitConversionApp
         }
         public static void Controls()
         {
+            Thread.Sleep(1500);
             Console.WriteLine("\nInput 'D' to return to the main menu.");
             Console.WriteLine("Input 'Q' to quit.");
             ConsoleKeyInfo keypressed = Console.ReadKey();
@@ -37,6 +39,7 @@ namespace UnitConversionApp
             switch (keypressed.Key)
             {
                 case ConsoleKey.D:
+                    Console.Clear();
                     Main();
                     break;
                 case ConsoleKey.Q:
@@ -47,8 +50,6 @@ namespace UnitConversionApp
             }
 
         }
-        
-
         public static void MetricControls()
         {
             Console.WriteLine("\nPress 'C' to convert Celsius to Fahrenheit.");
